@@ -3,23 +3,24 @@ package ru.kayl.lunchvoting.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "vote")
 public class Vote extends AbstractBaseEntity {
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "menu_id")
     private Menu menu;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
 
     @Column(name = "vote_date")
     @DateTimeFormat
-    private LocalDateTime voteDateTime;
+    private LocalDate voteDate;
 
     public Vote() {
     }
@@ -40,12 +41,22 @@ public class Vote extends AbstractBaseEntity {
         this.user = user;
     }
 
-    public LocalDateTime getVoteDateTime() {
-        return voteDateTime;
+    public LocalDate getVoteDate() {
+        return voteDate;
     }
 
-    public void setVoteDateTime(LocalDateTime voteDateTime) {
-        this.voteDateTime = voteDateTime;
+    public void setVoteDate(LocalDate voteDateTime) {
+        this.voteDate = voteDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Vote{" +
+                "id=" + id +
+                ", menuID=" + menu.getId() +
+                ", user=" + user.getName() +
+                ", voteDate=" + voteDate +
+                '}';
     }
 }
 

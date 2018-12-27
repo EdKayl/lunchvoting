@@ -20,10 +20,18 @@ class VoteRepositoryTest {
     VoteRepository repository;
 
     @Test
+    void getAllTest() {
+        repository.findAll().forEach(System.out::println);
+    }
+
+    @Test
+    void getByDateTest() {
+        LocalDate currentDate = LocalDate.of(2018, 12, 1);
+        repository.getByDate(currentDate).ifPresent(votes -> votes.forEach(System.out::println));
+    }
+
+    @Test
     void findByUserIdAndVoteDateTimeBetween() {
-        Optional<Vote> vote = repository.findByUserIdAndVoteDateTimeBetween(100014l,
-                LocalDateTime.of(testDate, LocalTime.MIN),
-                LocalDateTime.of(testDate, LocalTime.MAX));
-        System.out.println(vote.get());
+
     }
 }
