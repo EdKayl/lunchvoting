@@ -1,5 +1,6 @@
 package ru.kayl.lunchvoting.model;
 
+import net.bytebuddy.asm.Advice;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -23,6 +24,18 @@ public class Vote extends AbstractBaseEntity {
     private LocalDate voteDate;
 
     public Vote() {
+    }
+
+    public Vote(Long id, Menu menu, User user, LocalDate voteDate) {
+
+        super(id);
+        this.menu = menu;
+        this.user = user;
+        this.voteDate = voteDate;
+    }
+
+    public Vote(Menu menu, User user, LocalDate voteDate) {
+        this(null, menu, user, voteDate);
     }
 
     public Menu getMenu() {

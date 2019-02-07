@@ -25,12 +25,6 @@ class VoteRepositoryTest {
     }
 
     @Test
-    void getByDateTest() {
-        LocalDate currentDate = LocalDate.of(2018, 12, 1);
-        repository.getByDate(currentDate).ifPresent(votes -> votes.forEach(System.out::println));
-    }
-
-    @Test
     void findByUserIdAndVoteDateTimeBetween() {
 
     }

@@ -1,5 +1,6 @@
 package ru.kayl.lunchvoting.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.util.CollectionUtils;
 
 import javax.persistence.*;
@@ -14,6 +15,8 @@ public class User extends AbstractNamedEntity {
     private String email;
 
     @Column(name = "password", nullable = false)
+    // https://stackoverflow.com/a/12505165/548473
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @Column(name = "enabled", nullable = false, columnDefinition = "bool default true")

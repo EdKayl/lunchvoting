@@ -6,9 +6,10 @@ import ru.kayl.lunchvoting.model.Menu;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
-@Repository("menuRepository")
+@Repository
 public interface MenuRepository extends CommonRepository<Menu> {
 
-    public List<Menu> findAllByDate(LocalDate date);
+    public Optional<List<Menu>> findAllByDate(LocalDate date);
 }

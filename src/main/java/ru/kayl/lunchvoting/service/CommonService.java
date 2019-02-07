@@ -8,5 +8,10 @@ import java.util.Optional;
 public interface CommonService<E extends AbstractBaseEntity> {
 
     E save(E entity);
+
     List<E> findAll();
+
+    void delete(E entity);
+
+    Optional<E> findById(Long id);
 }

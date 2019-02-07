@@ -36,6 +36,7 @@ public class Menu extends AbstractBaseEntity{
     }
 
     public Menu(LocalDate date, Restaurant restaurant, List<Dish> dishes) {
+
         this(null, date, restaurant, dishes);
     }
 

@@ -23,11 +23,6 @@ class MenuRepositoryTest {
         printResult(repository.findAll());
     }
 
-    @Test
-    public void testGetAllByDate() {
-        printResult(repository.findAllByDate(LocalDate.of(2018, 12, 1)));
-
-    }
 
     @Test
     public void testSave() {

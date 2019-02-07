@@ -25,4 +25,14 @@ public abstract class AbstractService<E extends AbstractBaseEntity, R extends Co
     public List<E> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public void delete(E entity) {
+        repository.delete(entity);
+    }
+
+    @Override
+    public Optional<E> findById(Long id) {
+        return repository.findById(id);
+    }
 }

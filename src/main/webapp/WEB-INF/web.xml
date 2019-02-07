@@ -12,7 +12,8 @@
             classpath:spring/spring-app.xml
         </param-value>
     </context-param>
-    <!--<filter>
+
+    <filter>
         <filter-name>springSecurityFilterChain</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
     </filter>
@@ -20,7 +21,6 @@
         <filter-name>springSecurityFilterChain</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
--->
     <!-- Spring MVC -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/resources/initDb-postgres.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/initDb.sql" dialect="HSQLDB" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/populateDB.sql" dialect="HSQLDB" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/populateDB.sql" dialect="PostgreSQL" />
   </component>
 </project>

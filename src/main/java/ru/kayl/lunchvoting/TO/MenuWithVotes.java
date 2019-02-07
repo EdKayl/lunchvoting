@@ -8,7 +8,7 @@ public class MenuWithVotes {
 
     public MenuWithVotes(Menu menu, Long numOfVotes) {
         this.menu = menu;
-        this.numOfVotes = numOfVotes;
+        this.numOfVotes = numOfVotes != null ? numOfVotes : 0;
     }
 
     public Menu getMenu() {

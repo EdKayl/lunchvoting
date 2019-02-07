@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ru.kayl.lunchvoting.model.Menu;
 import ru.kayl.lunchvoting.service.MenuService;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -21,6 +22,8 @@ public class MenuRestController {
 
     @GetMapping
     public List<Menu> getAll() {
-        return service.findAll();
+        LocalDate currentDate = LocalDate.of(2018, 12, 1);
+        return service.getAllByDate(currentDate).get();
     }
+
 }

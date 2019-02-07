@@ -1,5 +1,6 @@
 package ru.kayl.lunchvoting.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.domain.Persistable;
 
 import javax.persistence.*;
@@ -27,6 +28,7 @@ public class AbstractBaseEntity implements Persistable<Long> {
         return id;
     }
 
+    @JsonIgnore
     public boolean isNew() {
         return this.id == null;
     }
